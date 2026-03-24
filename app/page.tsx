@@ -6,7 +6,7 @@ import Recents from "@/components/Recents";
 
 export default function Home() {
   return (
-    <div >
+    <div className="min-h-screen bg-gray-950"  >
       
       <Statbar/>
       <main className="flex gap-6 px-10 mt-10">

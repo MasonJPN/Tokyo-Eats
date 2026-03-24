@@ -14,7 +14,7 @@ return (
             <ul className="flex text-2xl gap-15 ">
                 
                     <li className="hover:text-gray-500">
-                    <Link href="/app">
+                    <Link href="/">
                      Home
                     </Link>
                     </li>
@@ -22,8 +22,11 @@ return (
                 <li className="hover:text-gray-500">
                 Map
                 </li>
-
-                <li className="hover:text-gray-500">List</li>
+                    <li className="hover:text-gray-500">
+                        <Link href="/list">
+                        List
+                        </Link>
+                        </li>
 
                     <li className="hover:text-gray-500" >
                     <Link href="/add">

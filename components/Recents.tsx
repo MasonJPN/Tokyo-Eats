@@ -19,11 +19,18 @@ const latest = RestaurantData.sort((a, b) => b.id - a.id)
            
 
             {latest.slice(0, 3).map((restaurant) => (
-  <div key={restaurant.id} className="border text-xl rounded-xl px-4 py-3 h-32 w-80">
+<div className="flex">
+  <div key={restaurant.id} className=" border text-xl rounded-xl px-4 py-3 h-32 w-80">
     <h3>{restaurant.name}</h3>
-    <p>{restaurant.category}</p>
-    <p>{"★".repeat(restaurant.ranking)}</p>
+    <p className="text-sm">{restaurant.category}</p>
+    <p className=" text-yellow-300 ">{"★".repeat(restaurant.ranking)}</p>
   </div>
+     
+     <div className="">
+        <img className="h-20 w-20" src={restaurant.image}></img>
+
+    </div>
+</div>
 ))}
 
               

@@ -1,8 +1,8 @@
 'use client'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
-import { RestaurantData } from '@/data/restaurants'
 
+import { useRestaurant } from '@/context/context'
 
 
 
@@ -19,8 +19,11 @@ L.Marker.prototype.options.icon = defaultIcon
 
 
 export default function Map() {
-
-const average = RestaurantData.reduce((sum, r) => sum + r.ranking, 0) / RestaurantData.length
+const {restaurants} = useRestaurant()
+const average =
+  restaurants.length > 0
+    ? restaurants.reduce((sum, r) => sum + r.ranking, 0) / restaurants.length
+    : 0
 
   return (
     
@@ -30,14 +33,17 @@ const average = RestaurantData.reduce((sum, r) => sum + r.ranking, 0) / Restaura
       style={{ height: "70vh", width: "95%", borderRadius: "20px" }}
     >
 
-        {RestaurantData.map((restaurant) => {
+        {restaurants.map((restaurant) => {
             return (
                 <Marker key={restaurant.id} position={[restaurant.location.lat, restaurant.location.lng]} >
-                    <Popup>
-                        <img />
-                        <h2>{restaurant.name}</h2>
-                        <p>{"★".repeat(restaurant.ranking) }</p>
-                        <p>{restaurant.review}</p>
+                    <Popup >
+                      <div className="  ">
+                        <img className="h-40 w-40 rounded-xl border-gray-950" src={restaurant.image}/>
+                        <h2 className=" mt-1 text-xl font-bold">{restaurant.name}</h2>
+                        <p className="font-bold"> Rating: <span className='text-yellow-400'>{"★".repeat(restaurant.ranking) }</span></p>
+                        <p><span className="font-bold">Review: </span>"{restaurant.review}"</p>
+                          
+                      </div>
                     </Popup>
                 </Marker>
             )
