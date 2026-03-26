@@ -8,9 +8,9 @@ export default function List() {
 
   return (
     <div className="min-h-screen bg-gray-950">
-        <h2 className="text-white text-4xl ml-30 mt-15 mb-3">All Restaurants</h2>
+        <h2 className="  text-white text-4xl  ml-10 md:ml-20 mt-15 mb-3">All Restaurants</h2>
         <SearchBar/>
-      <div className=" grid grid-cols-3 gap-10 ml-20 mr-20  mt-8">
+      <div className=" grid grid-cols md:grid-cols-3 gap-10  ml-10 md:ml-20 mr-20  mt-8">
       
         {restaurants.map((restaurant) => (
           <div key={restaurant.id} className="flex flex-col justify-center items-center rounded-2xl bg-gray-900 border border-gray-800 text-gray-300 p-6">

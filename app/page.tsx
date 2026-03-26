@@ -9,11 +9,11 @@ export default function Home() {
     <div className="min-h-screen bg-gray-950"  >
       
       <Statbar/>
-      <main className="flex gap-6 px-10 mt-10">
+      <main className=" md:flex gap-6 px-10 mt-10">
       <div className="flex-1">
         <Map/>
       </div>
-      <div className="w-120 ">
+      <div className="  md:w-120 ">
         <Recents/>
       </div>
       </main>

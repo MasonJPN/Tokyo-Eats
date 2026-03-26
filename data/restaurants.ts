@@ -9,7 +9,7 @@ import {Restaurant} from '../types'
     ranking: 3,
     category: "Sushi",
     review: "Decent sushi for cheap",
-    image: "",
+    image: "/sushiro.png",
     id: 1
     },
 
@@ -20,7 +20,7 @@ import {Restaurant} from '../types'
     ranking: 3,
     category: "Ramen",
     review: "It was decent ramen. Not worth the hype in my opinion.",
-    image: "",
+    image: "/ichiran.png",
     id: 2
     },
     {

@@ -71,13 +71,13 @@ export default function Add() {
         />
 
       
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-black/70" />
 
     
-        <div className="relative z-10 flex justify-center items-start py-20 px-4 min-h-screen">
+        <div className="relative z-10 flex justify-center items-start  py-10 md:py-20 px-4 min-h-screen">
 
           {submitted ? (
-            <div className="text-center flex flex-col gap-4 mt-20">
+            <div className="   text-center flex flex-col gap-4 mt-11 md:mt-20 ">
               <h2 className="text-5xl text-green-400 font-semibold">
                 Restaurant Added To Our Map ✅
               </h2>
