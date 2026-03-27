@@ -8,20 +8,27 @@ import { useRestaurant } from "@/context/context";
 
 export default function Statbar(){
     const {restaurants} = useRestaurant()
-const average = restaurants.reduce((sum, r) => sum + r.ranking, 0) / restaurants.length;
-const highest = restaurants.reduce((best, r) => r.ranking > best.ranking ? r : best)
+    const average =
+         restaurants.length > 0
+        ? restaurants.reduce((sum, r) => sum + r.ranking, 0) / restaurants.length
+        : 0
 
-
-
-
+    const highest =
+        restaurants.length > 0
+        ? restaurants.reduce((best, r) => (r.ranking > best.ranking ? r : best))
+        : { name: "-", ranking: 0 }
 
 const categoryCounts = restaurants.reduce((acc: Record<string, number>, r) => {
-  acc[r.category] = (acc[r.category] || 0) + 1
-  return acc
+      acc[r.category] = (acc[r.category] || 0) + 1
+     return acc
 }, {} as Record<string, number>)
-const topCategory = Object.keys(categoryCounts).reduce((best, current) => {
-  return categoryCounts[current] > categoryCounts[best] ? current : best
-})
+
+const topCategory =
+  Object.keys(categoryCounts).length > 0
+    ? Object.keys(categoryCounts).reduce((best, current) =>
+        categoryCounts[current] > categoryCounts[best] ? current : best
+      )
+    : "-"
 
 
 

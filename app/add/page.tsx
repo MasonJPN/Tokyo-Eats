@@ -61,7 +61,7 @@ export default function Add() {
   return (
     <>
       
-      <div className="relative w-full h-260">
+      <div className="relative w-full min-h-screen">
 
         
         <img
@@ -74,7 +74,8 @@ export default function Add() {
         <div className="absolute inset-0 bg-black/70" />
 
     
-        <div className="relative z-10 flex justify-center items-start  py-10 md:py-20 px-4 min-h-screen">
+        <div className="relative z-10 flex justify-center items-start py-10 md:py-20 px-4">
+
 
           {submitted ? (
             <div className="   text-center flex flex-col gap-4 mt-11 md:mt-20 ">
@@ -184,10 +185,12 @@ export default function Add() {
                       rows={4}
                     />
                   </div>
-
-                  <button type="submit" className="bg-green-700 hover:bg-green-600 transition-colors text-white font-semibold py-4 rounded-lg mt-2">
+                 {ate === false ?(<button disabled type="submit" className="bg-green-900 transition-colors text-white font-semibold py-4 rounded-lg mt-2">
                     Add Restaurant
-                  </button>
+                  </button>) : (<button type="submit" className="bg-green-700 hover:bg-green-600 transition-colors text-white font-semibold py-4 rounded-lg mt-2">
+                    Add Restaurant
+                  </button>)}
+                  
 
                 </form>
               </div>

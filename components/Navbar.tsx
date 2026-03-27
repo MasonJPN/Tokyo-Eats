@@ -10,7 +10,11 @@ export default function Navbar() {
     <nav className="bg-gray-900 border-b border-gray-800 text-gray-300 px-4 sm:px-10 py-4">
       <div className="flex justify-between items-center">
        
-        <h2 className="text-4xl text-white font-bold">Tokyo Eats</h2>
+        <h2 className="text-4xl text-white font-bold">
+          <Link href="/">
+          Tokyo Eats
+          </Link>
+          </h2>
 
        
         <button
