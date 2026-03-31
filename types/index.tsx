@@ -9,7 +9,7 @@ import React from 'react'
     ranking: number;
     category: string;
     review?: string;
-    imageUrl: string ;
+    imageUrl?: string ;
     id: string;
 }
 

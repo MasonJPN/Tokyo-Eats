@@ -34,7 +34,9 @@ const average =
     >
 
         {restaurants.map((restaurant) => {
-          console.log(restaurant)
+          if(!restaurant.location) return null
+
+
             return (
                 <Marker key={restaurant.id} position={[restaurant.location.lat, restaurant.location.lng]} >
                     <Popup >
