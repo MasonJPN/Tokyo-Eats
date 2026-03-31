@@ -21,7 +21,7 @@ export default function Statbar(){
 const categoryCounts = restaurants.reduce((acc: Record<string, number>, r) => {
       acc[r.category] = (acc[r.category] || 0) + 1
      return acc
-}, {} as Record<string, number>)
+        }, {} as Record<string, number>)
 
 const topCategory =
   Object.keys(categoryCounts).length > 0
@@ -55,7 +55,7 @@ const topCategory =
 
             <div className="flex  justify-center flex-col items-center bg-gray-900 border border-gray-800  md:w-90 h-30 rounded-2xl ">
                 <h3 className="text-xl">Highest Rated:</h3>
-                <p className=" px-3 font-bold text-4xl truncate max-w-full text-blue-400">{highest.name}</p> 
+                <p className=" px-3 font-bold text-xl truncate max-w-full text-blue-400">{highest.name}</p> 
             </div>
 
 

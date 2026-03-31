@@ -9,28 +9,8 @@ import {Restaurant} from '../types'
     ranking: 3,
     category: "Sushi",
     review: "Decent sushi for cheap",
-    image: "/sushiro.png",
-    id: 1
+    imageUrl: "/sushiro.png",
+    id: "Hello World"
     },
 
-    {
-    name: "Ichiran Ramen Shibuya",
-    ate: true,
-    location: {lng:139.8203, lat:35.6766 ,},
-    ranking: 3,
-    category: "Ramen",
-    review: "It was decent ramen. Not worth the hype in my opinion.",
-    image: "/ichiran.png",
-    id: 2
-    },
-    {
-    name: "McDonald's Shibuya",
-    ate: true,
-    location: {lng:139.698, lat:35.6617 ,},
-    ranking: 4,
-    category: "Other",
-    review: "The food and service was very fast but this location was super busy. Finding a place to sit was difficult.",
-    image: "/mcdon.png",
-    id: 3
-    }
-];
+ ]

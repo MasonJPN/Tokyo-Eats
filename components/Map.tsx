@@ -34,11 +34,12 @@ const average =
     >
 
         {restaurants.map((restaurant) => {
+          console.log(restaurant)
             return (
                 <Marker key={restaurant.id} position={[restaurant.location.lat, restaurant.location.lng]} >
                     <Popup >
                       <div className="  ">
-                        <img className="h-40 w-40 rounded-xl border-gray-950" src={restaurant.image}/>
+                        <img className="h-40 w-40 rounded-xl border-gray-950" src={restaurant.imageUrl}/>
                         <h2 className=" mt-1 text-xl font-bold">{restaurant.name}</h2>
                         <p className="font-bold"> Rating: <span className='text-yellow-400'>{"★".repeat(restaurant.ranking) }</span></p>
                         <p><span className="font-bold">Review: </span>"{restaurant.review}"</p>

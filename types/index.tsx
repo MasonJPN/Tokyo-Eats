@@ -9,8 +9,8 @@ import React from 'react'
     ranking: number;
     category: string;
     review?: string;
-    image?: string;
-    id: number;
+    imageUrl: string ;
+    id: string;
 }
 
 

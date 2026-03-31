@@ -1,8 +1,11 @@
-  import { RestaurantData } from "@/data/restaurants"
+ 'use client'
+import { useRestaurant } from "@/context/context"
 
 export default function Recents() {
 
-  const latest = [...RestaurantData].sort((a, b) => b.id - a.id)
+
+  const {restaurants} = useRestaurant()
+  const latest = [...restaurants].sort((a, b) => Number(b.id) - Number(a.id))
 
   return (
     <>
@@ -26,11 +29,19 @@ export default function Recents() {
                 </div>
 
                 <div>
-                  <img
-                    className="h-20 w-20 object-cover rounded-lg"
-                    src={restaurant.image}
-                    alt={restaurant.name}
-                  />
+                  {restaurant.imageUrl ? (
+                    <img
+                        className="h-20 w-20 object-cover rounded-lg"
+                        src={restaurant.imageUrl }
+                          alt={restaurant.name}
+                          />
+                  ) : (
+                    <div className="h-20 w-20 bg-gray-400 rounded-lg flex items-center justify-center">
+                      No Image
+                    </div>
+                  )
+                
+                }
                 </div>
               </div>
             ))}

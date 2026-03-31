@@ -32,9 +32,7 @@ export default function Navbar() {
           <li className="hover:text-gray-500">
             <Link href="/">Home</Link>
           </li>
-          <li className="hover:text-gray-500">
-            <Link href="/map">Map</Link>
-          </li>
+        
           <li className="hover:text-gray-500">
             <Link href="/list">List</Link>
           </li>
@@ -50,9 +48,7 @@ export default function Navbar() {
           <li className="hover:text-gray-500">
             <Link href="/">Home</Link>
           </li>
-          <li className="hover:text-gray-500">
-            <Link href="/map">Map</Link>
-          </li>
+          
           <li className="hover:text-gray-500">
             <Link href="/list">List</Link>
           </li>

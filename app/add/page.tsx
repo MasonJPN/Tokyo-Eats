@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react"
 import { useRestaurant } from "@/context/context"
-
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage"
 export default function Add() {
   const [location, setLocation] = useState("")
   const [name, setName] = useState("")
@@ -13,6 +13,7 @@ export default function Add() {
   const [coords, setCoords] = useState(null)
   const [submitted, setSubmitted] = useState(false)
   const [searchMsg, setSearchMsg] = useState(false)
+ const [photo, setPhoto] = useState<File | null>(null)
   const { addRestaurant } = useRestaurant()
 
   function handleStarCount(star: number){
@@ -23,13 +24,24 @@ export default function Add() {
     setAte(!ate)
   }
 
-  function handleSubmit(e: React.SubmitEvent) {
+
+
+  
+   async function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault()
 
     if (!coords){
       alert("Please select a location")
       return
     }
+
+    let imageUrl = ""
+
+        if (photo) {
+            imageUrl = URL.createObjectURL(photo)
+                  }
+
+    
 
     const newRestaurant = {
       name,
@@ -41,7 +53,7 @@ export default function Add() {
       ranking: starCount,
       category,
       review,
-      image: "",
+      imageUrl,
       id: Date.now(),
     }
 
@@ -94,7 +106,7 @@ export default function Add() {
               <div className="bg-gray-900/90 backdrop-blur-md border border-gray-800 rounded-2xl p-10 w-full max-w-lg text-gray-300">
                 
                 <h2 className="text-3xl font-semibold text-white mb-8 text-center">
-                  Add a Restaurant
+                  Add a Review
                 </h2>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -185,6 +197,31 @@ export default function Add() {
                       rows={4}
                     />
                   </div>
+                  
+
+                 <div className="flex flex-col gap-2">
+
+
+ 
+
+  <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-700 rounded-xl cursor-pointer hover:border-gray-500 transition-colors bg-gray-800/50">
+    
+    <span>{photo ? "Photo Added ✅": "Add Photo" }</span>
+    <input
+      type="file"
+      accept="image/*"
+      onChange={(e) => {
+           if (e.target.files && e.target.files[0]) {
+            setPhoto(e.target.files[0])
+                 }
+                }}
+
+      className="hidden"
+    />
+  </label>
+</div>
+
+
                  {ate === false ?(<button disabled type="submit" className="bg-green-900 transition-colors text-white font-semibold py-4 rounded-lg mt-2">
                     Add Restaurant
                   </button>) : (<button type="submit" className="bg-green-700 hover:bg-green-600 transition-colors text-white font-semibold py-4 rounded-lg mt-2">
