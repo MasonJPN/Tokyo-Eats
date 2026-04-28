@@ -20,10 +20,6 @@ L.Marker.prototype.options.icon = defaultIcon
 
 export default function Map() {
 const {restaurants} = useRestaurant()
-const average =
-  restaurants.length > 0
-    ? restaurants.reduce((sum, r) => sum + r.ranking, 0) / restaurants.length
-    : 0
 
   return (
     

@@ -78,7 +78,7 @@ export default function Add() {
         
         <img
           src="/map.png"
-          alt="Food hero"
+          alt="Map hero"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
@@ -130,7 +130,7 @@ export default function Add() {
                         </button>
                       ) : (
                         <button onClick={handleSearch} type="button" className="bg-gray-800 border border-gray-700 hover:border-gray-500 transition-colors text-white px-5 py-3 rounded-lg">
-                          Search
+                         Search
                         </button>
                       )}
                     </div>
